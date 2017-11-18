@@ -1,6 +1,7 @@
 public class BinarySearchTree {
 
 	static Node root;
+	static int t=0;
 	public BinarySearchTree() {
 		
 	}
@@ -74,27 +75,46 @@ public class BinarySearchTree {
 	}
 	
 	
-	public void greaterSumTree(Node root){
-		
+	public void greaterSumTree1(Node root,int sum){
+	if (root==null){
+		return;
+	}
+	//System.out.print("key"+root.key+"sum"+sum);
+	greaterSumTree1(root.right,sum);
+	//System.out.print("key"+root.key+"sum"+sum);
+	sum=t+root.key;
+	t=sum;
+	root.key=sum-root.key;
+	greaterSumTree1(root.left,sum);
+	}
+	
+	public Node greaterSumTree(Node root){
+		int sum=0;
+		greaterSumTree1(root,sum);
+		return root;
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		BinarySearchTree a=new BinarySearchTree();
-		Node c=new Node(10);
-		a.insert(c, 54);
-		a.insert(c, 60);
-		a.insert(c, 5);
-		a.insert(c, 1);
-		a.insert(c, 4545);
-		a.insert(c, 54535545);
+		Node c=new Node(1);
+		a.insert(c,2);
+		a.insert(c,3);
+		a.insert(c,4);
+		a.insert(c,9);
+		//a.insert(c,4);
+		//a.insert(c,6);
 		//System.out.print(a.contains(c, 60));
-		//a.print(c);
+		a.print(c);
+		
+		System.out.print("-----------------------"+"\n");
+		Node m=a.greaterSumTree(c);
+		a.print(m);
 		//Size 
 	//	System.out.print(a.size(c));
-		System.out.print(a.smallest(c)+"\n");
-		System.out.print(a.largest(c));
+		//System.out.print(a.smallest(c)+"\n");
+		//System.out.print(a.largest(c));
 	}
 
 }
