@@ -24,7 +24,7 @@ public class BinarySearchTree {
 	
 	public BinarySearchTree() {}
 
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	void insert(int item)
 	{									//Wrapper for insert
 		root=insert_wrap(root,item);
@@ -48,7 +48,7 @@ public class BinarySearchTree {
 		return root;
 	    }
 	
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	void contains(int item)
 	{			//Wrapper for contains fuction
 		boolean exist=contains_wrap(root,item);
@@ -71,7 +71,7 @@ public class BinarySearchTree {
 		}
 		}
 	
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	void print (){
 		print_wrap(root); //Wrapper for inorder print
 	}
@@ -85,7 +85,7 @@ public class BinarySearchTree {
 			
 	}
 
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	public void size(){
 		int sz=size_wrap(root);
 		System.out.print("Size "+sz+"\n");
@@ -98,7 +98,7 @@ public class BinarySearchTree {
 		return count;
 	}
 	
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	void smallest()
 	{
 		int small=smallest_wrap(root);
@@ -113,7 +113,7 @@ public class BinarySearchTree {
 			return root.key;
 	}
 	
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	void largest()
 	{
 		int large=largest_wrap(root);
@@ -128,7 +128,7 @@ public class BinarySearchTree {
 				return root.key;
 	}
 	
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 		
 	public void greaterSumTree(){
 		System.out.print("Tree before greater-sum transformation"+"\n"+"\n");
@@ -151,7 +151,7 @@ public class BinarySearchTree {
 	}
 	
 
-	//------------------------------------------------------------------------------//
+	//----------------------------------------------------//
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] array = {56,34,6,1,4,7,9,564,344,3};
